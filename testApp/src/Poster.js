@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   title: {
     ...defaultStyles.text,
-    fontSize: 14,
+    fontSize: 15,
     marginTop: 4,
   },
   genre: {
