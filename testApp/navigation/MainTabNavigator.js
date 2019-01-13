@@ -117,6 +117,7 @@ export default createBottomTabNavigator({
   NotificationStack
 },
 {
+  tabBarPosition: 'top',
   tabBarOptions: {
   activeTintColor: 'white',
   labelStyle: {
@@ -127,3 +128,20 @@ export default createBottomTabNavigator({
   },
 }
 });
+
+// export default createTabNavigator({
+//   HomeStack,
+//   NotificationStack
+// },
+// {
+//
+//   tabBarOptions: {
+//   activeTintColor: 'white',
+//   labelStyle: {
+//     fontSize: 12,
+//   },
+//   style: {
+//     backgroundColor: '#00796A',
+//   },
+// }
+// });

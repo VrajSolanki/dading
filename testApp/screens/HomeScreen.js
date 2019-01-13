@@ -9,10 +9,10 @@ import {
   View,
   FlatList
 } from 'react-native';
+import { Icon } from 'expo';
 import { WebBrowser } from 'expo';
 import { movies } from '../src/data';
 import Poster from '../src/Poster';
-
 
 import { MonoText } from '../components/StyledText';
 
@@ -21,59 +21,126 @@ export default class HomeScreen extends React.Component {
     header: null,
   };
 
+  open_drawer(){
+    alert("Hii");
+  }
   render() {
     return (
-      <ScrollView>
-          <View style={styles.container}>
-            <View style = {styles.box}>
-              <Text style = {styles.header}>
-                  Dings
-              </Text>
-              <ScrollView contentContainerStyle={[styles.scrollContent, styles.staticContent]}
-      		  // Hide all scroll indicators
-                showsHorizontalScrollIndicator={true}
-                showsVerticalScrollIndicator={false}>
-              {movies.map((movie, index) => <Poster
-              movie={movie}
-              key={index}
-              />)}
-              </ScrollView>
+    <View>
+        <View style = {styles.nav}>
+        <TouchableOpacity onPress={() => this.open_drawer()}>
+                <Icon.Ionicons
+                  name="md-menu"
+                  color = "white"
+                  size={50}
+                  />
+          </TouchableOpacity>
+
+          <Icon.Ionicons
+            name="md-person"
+            color = "white"
+            size={50}
+            />
+
+            <View style={styles.nav1}>
+                <Icon.Ionicons
+                  name="md-search"
+                  color = "white"
+                  size={30}
+                  />
+                  <Icon.Ionicons
+                    name="md-navigate"
+                    color = "white"
+                    size={40}
+                    />
               </View>
 
-              <View  style = {styles.box}>
-                <Text style = {styles.header}>
-                    My Topics
-                </Text>
-                <ScrollView contentContainerStyle={styles.scrollContent}
-              // Hide all scroll indicators
-                  showsHorizontalScrollIndicator={true}
-                  showsVerticalScrollIndicator={false}
-                  horizontal={true}>
-                {movies.map((movie, index) => <Poster
-                movie={movie}
-                key={index}
-                />)}
-                </ScrollView>
-                </View>
-
-                <View  style = {styles.box}>
+        </View>
+        <ScrollView>
+              <View style={styles.container}>
+                <View style = {styles.box}>
                   <Text style = {styles.header}>
-                      Recommendaations
+                      Dings
                   </Text>
-                  <ScrollView contentContainerStyle={styles.scrollContent}
-                // Hide all scroll indicators
+                  <ScrollView contentContainerStyle={[styles.scrollContent, styles.staticContent]}
+          		  // Hide all scroll indicators
                     showsHorizontalScrollIndicator={true}
-                    showsVerticalScrollIndicator={false}
-                    horizontal={true}>
+                    showsVerticalScrollIndicator={false}>
                   {movies.map((movie, index) => <Poster
                   movie={movie}
                   key={index}
                   />)}
                   </ScrollView>
                   </View>
-          </View>
-          </ScrollView>
 
+                  <View  style = {styles.box}>
+                    <Text style = {styles.header}>
+                        My Topics
+                    </Text>
+                    <ScrollView contentContainerStyle={styles.scrollContent}
+                  // Hide all scroll indicators
+                      showsHorizontalScrollIndicator={true}
+                      showsVerticalScrollIndicator={false}
+                      horizontal={true}>
+                    {movies.map((movie, index) => <Poster
+                    movie={movie}
+                    key={index}
+                    />)}
+                    </ScrollView>
+                    </View>
+
+                    <View  style = {styles.box}>
+                      <Text style = {styles.header}>
+                          Recommendaations
+                      </Text>
+                      <ScrollView contentContainerStyle={styles.scrollContent}
+                    // Hide all scroll indicators
+                        showsHorizontalScrollIndicator={true}
+                        showsVerticalScrollIndicator={false}
+                        horizontal={true}>
+                      {movies.map((movie, index) => <Poster
+                      movie={movie}
+                      key={index}
+                      />)}
+                      </ScrollView>
+                      </View>
+
+                      <View  style = {styles.box}>
+                        <Text style = {styles.header}>
+                            My Topics
+                        </Text>
+                        <ScrollView contentContainerStyle={styles.scrollContent}
+                      // Hide all scroll indicators
+                          showsHorizontalScrollIndicator={false}
+                          showsVerticalScrollIndicator={false}
+                          horizontal={true}>
+                        {movies.map((movie, index) => <Poster
+                        movie={movie}
+                        key={index}
+                        />)}
+                        </ScrollView>
+                        </View>
+
+                      <View  style = {[styles.box, styles.box1]}>
+                        <Text style = {styles.header}>
+                          Tren- Ding- ers!
+                        </Text>
+                        <ScrollView contentContainerStyle={styles.scrollContent}
+                      // Hide all scroll indicators
+                          showsHorizontalScrollIndicator={false}
+                          showsVerticalScrollIndicator={false}
+                          horizontal={true}>
+                        {movies.map((movie, index) => <Poster
+                        movie={movie}
+                        key={index}
+                        />)}
+                        </ScrollView>
+                        </View>
+
+
+              </View>
+        </ScrollView>
+    </View>
 
     );
   }
@@ -99,6 +166,22 @@ const styles = StyleSheet.create({
   },
   box: {
     backgroundColor: "white",
-    marginTop: 30
+    marginTop: 30,
+  },
+  nav:{
+    flexDirection: 'row',
+    marginTop:23,
+    backgroundColor:'#00796A',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding:5
+  },
+  nav1:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  box1:{
+    paddingBottom:80
   }
 });
