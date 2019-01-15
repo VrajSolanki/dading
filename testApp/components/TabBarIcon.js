@@ -11,7 +11,6 @@ export default class TabBarIcon extends React.Component {
         color = "white"
         size={this.props.size}
         style={{ marginBottom: -3 }}
-        color={this.props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
+import { createStackNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
+import { DrawerActions } from 'react-navigation-drawer';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
@@ -109,6 +109,16 @@ ShareStack.navigationOptions = {
   ),
 };
 
+const MyDrawerNavigator = createDrawerNavigator({
+  Home: {
+    screen: HomeScreen,
+  },
+  Notifications: {
+    screen: SettingsScreen,
+  },
+});
+
+export {MyDrawerNavigator};
 export default createBottomTabNavigator({
   HomeStack,
   ShareStack,
