@@ -1,62 +1,106 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
-import { AppLoading, Asset, Font, Icon } from 'expo';
-import AppNavigator from './navigation/AppNavigator';
+import { Text, View,  Platform } from 'react-native';
+import HomeScreen from './screens/HomeScreen';
+import LinksScreen from './screens/LinksScreen';
+import SettingsScreen from './screens/SettingsScreen';
+import Profile from './screens/Profile';
+import TabBarIcon from './components/TabBarIcon';
+import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator} from 'react-navigation';
 
-export default class App extends React.Component {
-  state = {
-    isLoadingComplete: false,
-  };
+// const stack1 = createStackNavigator({
+//   Home: HomeScreen,
+//     Settings: SettingsScreen
+//
+// });
+//
+// const stack2 = createStackNavigator({
+//     Links: LinksScreen,
+//     Profile: Profile
+//
+// });
 
-  render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
-      return (
-        <AppLoading
-          startAsync={this._loadResourcesAsync}
-          onError={this._handleLoadingError}
-          onFinish={this._handleFinishLoading}
-        />
-      );
-    } else {
-      return (
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppNavigator />
-        </View>
-      );
-    }
-  }
-
-  _loadResourcesAsync = async () => {
-    return Promise.all([
-      Asset.loadAsync([
-        require('./assets/images/robot-dev.png'),
-        require('./assets/images/robot-prod.png'),
-      ]),
-      Font.loadAsync({
-        // This is the font that we are using for our tab bar
-        ...Icon.Ionicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free
-        // to remove this if you are not using it in your app
-        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
-      }),
-    ]);
-  };
-
-  _handleLoadingError = error => {
-    // In this case, you might want to report the error to your error
-    // reporting service, for example Sentry
-    console.warn(error);
-  };
-
-  _handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true });
-  };
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
+const HomeStack  = createStackNavigator({
+  Home:HomeScreen
 });
+HomeStack.navigationOptions = {
+  tabBarLabel: ' ',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      size = {35}
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-home' : 'md-home'}
+    />
+  ),
+};
+
+const SettingsStack  = createStackNavigator({
+  Settings:SettingsScreen
+});
+SettingsStack.navigationOptions = {
+  tabBarLabel: ' ',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      size = {35}
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-analytics' : 'md-analytics'}
+    />
+  ),
+};
+
+const LinksStack  = createStackNavigator({
+  Links:LinksScreen
+});
+LinksStack.navigationOptions = {
+  tabBarLabel: ' ',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      size = {35}
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+    />
+  ),
+};
+
+const TabNavigation = createBottomTabNavigator({
+  Home: HomeStack,
+  Bottom: SettingsStack,
+  Links: LinksStack,
+  Links1: SettingsStack,
+  Links2: HomeStack,
+},
+{
+  tabBarOptions: {
+  showLabel:false,
+  inactiveTintColor:'green',
+  activeTintColor: 'red',
+  labelStyle: {
+    fontSize: 2,
+  },
+  style: {
+    backgroundColor: '#00796A',
+    color:'red'
+  },
+}
+});
+
+const TabsWithDrawerNavigation = createDrawerNavigator({
+  Profile: {
+    screen: TabNavigation,
+  },
+  Account:{
+    screen:HomeScreen
+  }
+});
+
+
+// const AppNavigator = createStackNavigator({
+//   TabsWithDrawer: {
+//     screen: HomeScreen,
+//   }
+// });
+
+const AppContainer = createAppContainer(TabsWithDrawerNavigation);
+
+// Now AppContainer is the main component for React to render
+
+export default AppContainer;
