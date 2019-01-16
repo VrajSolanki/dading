@@ -10,7 +10,7 @@ export default class Dings extends React.Component {
           <Icon.Ionicons
             name={'md-person'}
             color = "white"
-            size={140}
+            size={70}
             style={{alignItems: 'center'}}
           />
         <View style = {styles.interest}>
@@ -29,7 +29,7 @@ export default class Dings extends React.Component {
           <Icon.Ionicons
             name={'md-star'}
             color = "#04BCD1"
-            size={55}
+            size={35}
             style={{alignItems: 'center'}}
           />
           <Text style = {[styles.rating, styles.text]}>4.3</Text>
@@ -49,67 +49,67 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    margin: 20,
-    padding: 15
+    margin:3,
+    padding: 35
   },
   outerCircle: {
     alignItems: 'center',
-    borderRadius: 80,
-    width: 160,
-    height: 160,
+    borderRadius: 40,
+    width: 80,
+    height: 80,
     borderColor: '#00796A',
     borderWidth: 2,
     backgroundColor: '#00796A',
   },
   circle: {
-    borderRadius: 30,
-    width: 60,
-    height: 60,
+    borderRadius: 15,
+    width: 30,
+    height: 30,
     borderColor: '#00796A',
     borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
-    top: 120,
-    left: 110
+    top: 60,
+    left: 60
 
   },
   image: {
-    borderRadius: 30,
-    width: 60,
-    height: 60,
+    borderRadius: 15,
+    width: 30,
+    height: 30,
 
   },
   interest: {
     backgroundColor:'#04BCD1',
     position: 'absolute',
-    top: 140,
-    left: -15,
+    top: 60,
+    left: -35,
     padding: 5,
     borderRadius: 5,
   },
    topic: {
     backgroundColor:'#04BCD1',
     position: 'absolute',
-    top: 10,
-    left: -15,
+    top: -5,
+    left: -35,
     padding: 5,
     borderRadius: 5,
   },
   text: {
-    fontSize: 15,
+    fontSize: 11,
     fontWeight: 'bold'
   },
   name: {
     top:10
   },
   rating: {
-    top: -38,
-    left: 10
+    top: -25,
+    left: 6
   },
   star: {
     position: 'absolute',
-    top:5,
+    top:-5,
     right: -10
   }
 });
