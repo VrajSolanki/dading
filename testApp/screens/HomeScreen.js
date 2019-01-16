@@ -10,10 +10,10 @@ import {   Image,
   TouchableOpacity,
   View,
   FlatList, Button} from 'react-native';
-import { movies } from '../src/data';
-import Poster from '../src/Poster';
 import HeaderButtons, { HeaderButton, Item } from 'react-navigation-header-buttons';
 import Dings from '../components/Dings'
+import Topics from '../components/Topics'
+import Recommendations from '../components/Recommendations'
 
 const DisableableHeaderButton = props => (
   <HeaderButton
@@ -78,6 +78,40 @@ export default class HomeScreen extends React.Component {
                     <Dings />
               </ScrollView>
       </View>
+
+      <View  style = {styles.box}>
+        <Text style = {styles.header}>
+          Topics!
+        </Text>
+          <ScrollView contentContainerStyle={styles.scrollContent}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}>
+                  <Topics />
+                  <Topics />
+                  <Topics />
+                  <Topics />
+                  <Topics />
+            </ScrollView>
+      </View>
+
+      <View  style = {styles.box}>
+        <Text style = {styles.header}>
+          Recommendations!
+        </Text>
+          <ScrollView contentContainerStyle={styles.scrollContent}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}>
+                  < Recommendations />
+                  < Recommendations />
+                  < Recommendations />
+                  < Recommendations />
+                  < Recommendations />
+                  < Recommendations />
+            </ScrollView>
+      </View>
+
 
       <View  style = {styles.box}>
         <Text style = {styles.header}>
