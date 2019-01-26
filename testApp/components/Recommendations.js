@@ -58,16 +58,15 @@ const styles = StyleSheet.create({
     left: -5
   },
   outerBox: {
-    borderColor: '#00796A',
-    borderStyle: 'dashed',
-    borderWidth: 2,
+    borderColor:'#FB9F00',
+    borderWidth: 3,
     borderRadius: 1,
     position: 'relative',
   },
   innerBox:{
     height: 100,
     width: 100,
-    backgroundColor:'#00796A',
+    backgroundColor:'#FCBE4E',
     margin: 3
   },
   container: {

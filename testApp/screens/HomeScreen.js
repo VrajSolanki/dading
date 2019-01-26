@@ -20,7 +20,7 @@ const DisableableHeaderButton = props => (
     {...props}
     background={Touchable.Ripple('white', true)}
     IconComponent={Ionicons}
-    iconSize={30}
+    iconSize={35}
     color="white"
   />
 );
@@ -28,7 +28,7 @@ const DisableableHeaderButton = props => (
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     headerStyle: {
-      backgroundColor: '#00796A',
+      backgroundColor: '#FEC107',
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
@@ -43,7 +43,7 @@ export default class HomeScreen extends React.Component {
       headerLeft: (
         <HeaderButtons HeaderButtonComponent={DisableableHeaderButton}>
           <Item title="search" iconName="ios-menu" onPress={() => alert('search')} disabled />
-          <Item title="select" iconName="ios-person" onPress={() => alert('select')} />
+          <Item title="HOME" />
         </HeaderButtons>
         ),
   };
@@ -55,6 +55,9 @@ export default class HomeScreen extends React.Component {
       <View  style = {styles.box}>
         <Text style = {styles.header}>
             Dings
+        </Text>
+        <Text style = {styles.tagline}>
+          Let's get dinging !
         </Text>
           <ScrollView contentContainerStyle={styles.scrollContent}
           horizontal={true}
@@ -169,6 +172,11 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginBottom: 30,
   },
+  tagline: {
+    fontSize: 20,
+    left: 140,
+    fontStyle: 'italic'
+  }
 
 
 });
