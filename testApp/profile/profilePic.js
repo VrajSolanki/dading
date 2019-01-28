@@ -6,7 +6,7 @@ export default class ProfilePic extends React.Component{
     render(){
         return (
             <View style={styles.circleContainer}>
-                <Image source={require("../images/guy.jpg")} style={styles.circle}/>
+                <Image source={require("../assets/images/pk.jpg")} style={styles.circle}/>
                 <Icon.Ionicons
                     name = {'md-camera'}
                     size = {20}
@@ -20,7 +20,7 @@ export default class ProfilePic extends React.Component{
 
 const styles = StyleSheet.create({
     circleContainer:{
-        marginTop: 100
+        marginTop: 50
     },
     circle:{
         height: 100,
