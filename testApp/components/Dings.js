@@ -9,6 +9,9 @@ export default class Dings extends React.Component {
         <View style={styles.outerCircle}>
         <Image source={require('../assets/images/pk.jpg')}
             style={styles.image} />
+        <View style = {styles.name}>
+          <Text style = {styles.text}>Preetam</Text>
+        </View>
         <View style = {styles.interest}>
         <View style = {styles.interestIcon}>
               <Icon.Ionicons
@@ -39,9 +42,7 @@ export default class Dings extends React.Component {
           />
         </View>
         </View>
-        <View style = {styles.name}>
-        <Text style = {styles.text}>Preetam</Text>
-        </View>
+
       </View>
     );
   }
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     margin:3,
     padding:25,
-    paddingBottom:75
+    paddingBottom:85
   },
   outerCircle: {
     alignItems: 'center',
@@ -84,15 +85,15 @@ const styles = StyleSheet.create({
   },
   interest: {
     position: 'absolute',
-    top: 100,
-    left: 25,
+    top: 105,
+    left: 15,
     padding: 5,
     borderRadius: 5,
   },
    topic: {
     position: 'absolute',
-    top: 120,
-    left: 25,
+    top: 125,
+    left: 15,
     padding: 5,
     borderRadius: 5,
   },
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     top: 2
   },
   name: {
-    top:10,
+    top:5,
     fontSize: 15,
   },
   star: {

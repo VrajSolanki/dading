@@ -49,14 +49,15 @@ const styles = StyleSheet.create({
     borderColor: '#FB9F00',
     borderStyle: 'dashed',
     borderWidth: 2,
-    borderRadius: 1,
+    borderRadius: 20,
     position: 'relative',
   },
   innerBox:{
     height: 100,
     width: 100,
     backgroundColor:'#FCBE4E',
-    margin: 3
+    margin: 3,
+    borderRadius: 20
   },
   container: {
     flex: 1,
