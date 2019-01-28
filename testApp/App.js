@@ -35,7 +35,7 @@ HomeStack.navigationOptions = {
 };
 
 const SettingsStack  = createStackNavigator({
-  Settings:SettingsScreen
+  Settings:ProfileScreen
 });
 SettingsStack.navigationOptions = {
   tabBarLabel: ' ',
@@ -49,7 +49,7 @@ SettingsStack.navigationOptions = {
 };
 
 const LinksStack  = createStackNavigator({
-  Links:LinksScreen
+  Links:HomeScreen
 });
 LinksStack.navigationOptions = {
   tabBarLabel: ' ',
@@ -73,7 +73,7 @@ NavStack.navigationOptions = {
 };
 
 const NotificationStack  = createStackNavigator({
-  Settings:SettingsScreen
+  Settings:HomeScreen
 });
 NotificationStack.navigationOptions = {
   tabBarLabel: ' ',
