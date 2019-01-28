@@ -3,7 +3,7 @@ import { Text, View,  Platform } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import LinksScreen from './screens/LinksScreen';
 import SettingsScreen from './screens/SettingsScreen';
-import Profile from './screens/Profile';
+import ProfileScreen from './screens/ProfileScreen';
 import TabBarIcon from './components/TabBarIcon';
 import Ding_Icon from './components/Ding_Icon'
 import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator} from 'react-navigation';
@@ -59,7 +59,7 @@ LinksStack.navigationOptions = {
 };
 
 const NavStack  = createStackNavigator({
-  Settings:SettingsScreen
+  Profile:ProfileScreen
 });
 NavStack.navigationOptions = {
   tabBarLabel: ' ',
