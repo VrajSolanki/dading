@@ -5,6 +5,7 @@ import LinksScreen from './screens/LinksScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import Profile from './screens/Profile';
 import TabBarIcon from './components/TabBarIcon';
+import Ding_Icon from './components/Ding_Icon'
 import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator} from 'react-navigation';
 
 // const stack1 = createStackNavigator({
@@ -42,7 +43,7 @@ SettingsStack.navigationOptions = {
     <TabBarIcon
       size = {35}
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-analytics' : 'md-analytics'}
+      name={Platform.OS === 'ios' ? 'ios-people' : 'md-people'}
     />
   ),
 };
@@ -53,10 +54,34 @@ const LinksStack  = createStackNavigator({
 LinksStack.navigationOptions = {
   tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
+    <Ding_Icon />
+  ),
+};
+
+const NavStack  = createStackNavigator({
+  Settings:SettingsScreen
+});
+NavStack.navigationOptions = {
+  tabBarLabel: ' ',
+  tabBarIcon: ({ focused }) => (
     <TabBarIcon
       size = {35}
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+      name={Platform.OS === 'ios' ? 'ios-compass' : 'md-compass'}
+    />
+  ),
+};
+
+const NotificationStack  = createStackNavigator({
+  Settings:SettingsScreen
+});
+NotificationStack.navigationOptions = {
+  tabBarLabel: ' ',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      size = {35}
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-notifications' : 'md-notifications'}
     />
   ),
 };
@@ -65,8 +90,8 @@ const TabNavigation = createBottomTabNavigator({
   Home: HomeStack,
   Bottom: SettingsStack,
   Links: LinksStack,
-  Links1: SettingsStack,
-  Links2: HomeStack,
+  Links1: NavStack,
+  Links2: NotificationStack,
 },
 {
   tabBarOptions: {

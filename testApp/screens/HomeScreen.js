@@ -165,8 +165,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize:30,
-    fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   box: {
     backgroundColor: "white",
