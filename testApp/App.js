@@ -102,7 +102,7 @@ const TabNavigation = createBottomTabNavigator({
     fontSize: 2,
   },
   style: {
-    backgroundColor: '#FEC107',
+    backgroundColor: 'rgb(255,193,7)',
     color:'red'
   },
 }

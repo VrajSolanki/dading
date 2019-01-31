@@ -53,16 +53,20 @@ export default class HomeScreen extends React.Component {
     <ScrollView>
     <View style = {styles.container}>
       <View  style = {styles.box}>
+
         <Text style = {styles.header}>
             Dings
         </Text>
+        
         <Text style = {styles.tagline}>
-          Let's get dinging !
+           Let's get dinging
         </Text>
+
           <ScrollView contentContainerStyle={styles.scrollContent}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}>
+                  <Dings />
                   <Dings />
                   <Dings />
                   <Dings />
@@ -84,7 +88,7 @@ export default class HomeScreen extends React.Component {
 
       <View  style = {styles.box}>
         <Text style = {styles.header}>
-          Topics!
+          My Topics
         </Text>
           <ScrollView contentContainerStyle={styles.scrollContent}
           horizontal={true}
@@ -164,17 +168,20 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap'      //// allow multiple rows
   },
   header: {
-    fontSize:30,
+    fontSize:20,
     textAlign: 'center',
+    fontWeight: 'bold'
   },
   box: {
     backgroundColor: "white",
-    marginBottom: 30,
+    marginBottom: 4,
+    padding: 6
   },
   tagline: {
-    fontSize: 20,
-    left: 140,
-    fontStyle: 'italic'
+    fontSize: 16,
+    left: 155,
+    fontStyle: 'italic',
+    color: 'grey'
   }
 
 
