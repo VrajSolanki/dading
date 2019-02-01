@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View,  Platform } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
-import LinksScreen from './screens/LinksScreen';
+import ConnectionScreen from './screens/ConnectionScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import TabBarIcon from './components/TabBarIcon';
@@ -21,7 +21,7 @@ import { createBottomTabNavigator, createAppContainer, createStackNavigator, cre
 // });
 
 const HomeStack  = createStackNavigator({
-  Home:HomeScreen
+  Home:ConnectionScreen
 });
 HomeStack.navigationOptions = {
   tabBarLabel: ' ',
