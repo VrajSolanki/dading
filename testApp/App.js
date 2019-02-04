@@ -5,7 +5,9 @@ import ConnectionScreen from './screens/ConnectionScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import TabBarIcon from './components/TabBarIcon';
-import Ding_Icon from './components/Ding_Icon'
+import Ding_Icon from './components/Ding_Icon';
+import ChatListScreen from './screens/ChatListScreen';
+
 import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator} from 'react-navigation';
 
 // const stack1 = createStackNavigator({
@@ -21,7 +23,7 @@ import { createBottomTabNavigator, createAppContainer, createStackNavigator, cre
 // });
 
 const HomeStack  = createStackNavigator({
-  Home:ConnectionScreen
+  Home:HomeScreen
 });
 HomeStack.navigationOptions = {
   tabBarLabel: ' ',
@@ -59,7 +61,7 @@ LinksStack.navigationOptions = {
 };
 
 const NavStack  = createStackNavigator({
-  Profile:ProfileScreen
+  Profile:ConnectionScreen
 });
 NavStack.navigationOptions = {
   tabBarLabel: ' ',
@@ -110,10 +112,13 @@ const TabNavigation = createBottomTabNavigator({
 
 const TabsWithDrawerNavigation = createDrawerNavigator({
   Profile: {
-    screen: TabNavigation,
+    screen: TabNavigation
   },
   Account:{
     screen:HomeScreen
+  },
+  Chat:{
+    screen:ChatListScreen
   }
 });
 
