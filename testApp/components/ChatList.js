@@ -44,21 +44,23 @@ const styles = StyleSheet.create({
   infoTime:{
     fontSize: 10,
     color: 'grey',
-    top: 18
+    top: 16
   },
   infoName:{
     marginLeft: 15,
-    top: 15,
+    top: 14,
     fontSize: 15
   },
   message:{
     flex: 1,
-    paddingBottom: 6
+    paddingBottom: 6,
+    marginBottom: 15
   },
   info: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: 5
   },
   text: {
     flex: 1,
@@ -67,7 +69,6 @@ const styles = StyleSheet.create({
   border:{
     borderBottomWidth: 1,
     borderBottomColor: '#e0ebeb',
-    top: 8,
     width: '100%'
   },
   container: {

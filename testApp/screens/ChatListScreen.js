@@ -11,6 +11,8 @@ import {   Image,
   View,
   FlatList, Button} from 'react-native';
 import ChatList from '../components/ChatList'
+import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator} from 'react-navigation';
+
 export default class ConnectionScreen extends React.Component {
 
   render() {
@@ -32,6 +34,13 @@ export default class ConnectionScreen extends React.Component {
                       style={{padding: 10}}
                       />
 
+      </View>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Home Screen</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Chats1')}
+        />
       </View>
       <View style = {styles.tabBar}>
             <Text style={styles.tabText}>CHATS</Text>
