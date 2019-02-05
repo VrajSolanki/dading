@@ -106,9 +106,13 @@ export default class ProfileScreen extends React.Component{
                     </View>
                 </View>
                 <View style={styles.container3}>
-                    <Text style={styles.font17}>Football</Text>
+                    <View style={{flexDirection: "row"}}>
+                        <Text style={styles.font17}>Football</Text>
+                        <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 2}}/>
+                        <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 2}}/>
+                    </View>
                     <View style={styles.subcontainer3}>
-                        <View style={styles.subsubcontainer2}>
+                        {/* <View style={styles.subsubcontainer2}>
                             <View style={styles.subsubsubcontainer1}>
                                 <Text style={styles.font10grey}>
                                     Conversations
@@ -137,10 +141,14 @@ export default class ProfileScreen extends React.Component{
                                     4.5
                                 </Text>
                             </View>
-                        </View>
+                        </View> */}
                         <View>
                             <View style={styles.subsubcontainer3}>
-                                <ProgressBar/>
+                                <View style={{flexDirection: "row", marginLeft: 15}}>
+                                    <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 10}}/>
+                                    <ProgressBar/>
+                                    <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 20, marginTop: 10}}/>
+                                </View>
                             </View>
                         </View>
                     </View>
@@ -155,15 +163,15 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         flexDirection: "column",
-        backgroundColor: "#c0c0c0",
+        backgroundColor: "#c0c0c0"
     },
     container1:{
         borderWidth: 1,
         backgroundColor: "white",
-        height:250,
-        borderColor: "#c0c0c0",
+        height: 300,
+        borderColor: "#c0c0c0", 
         flex: 1,
-        flexDirection: "row",
+        flexDirection: "row"
     },
     container2:{
         borderWidth: 1,
@@ -177,7 +185,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: "white",
         marginTop: 2,
-        height: 150,
+        height: 200,
         borderColor: "#c0c0c0",
         padding: 10
     },
@@ -191,21 +199,21 @@ const styles = StyleSheet.create({
         flexDirection: "column"
     },
     subcontainer3:{
-        height: 100,
+        height: 100, 
         flexDirection: "row"
     },
     subcontainer4: {
         flexDirection: "row"
     },
     subcontainer5: {
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
+        justifyContent: "center", 
+        alignItems: "center", 
+        flexDirection: "column", 
         marginTop: 20
     },
     profilePic: {
         marginTop: 100
-    },
+    }, 
     text1:{
         marginTop: 10,
         marginLeft: 10,
@@ -220,7 +228,7 @@ const styles = StyleSheet.create({
     },
     subsubcontainer:{
         marginLeft:5,
-        marginTop: 50,
+        marginTop: 80,
         flex: 1,
         flexDirection: "row"
     },
@@ -231,9 +239,9 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     subsubcontainer2:{
-        flexDirection: "row",
-        height: 50,
-        marginTop: 30
+        flexDirection: "row", 
+        height: 50, 
+        marginTop: 30 
     },
     subsubcontainer3:{
         marginTop: 50,
@@ -261,24 +269,24 @@ const styles = StyleSheet.create({
     },
     subsubsubcontainer1: {
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "center", 
         flexDirection: "column"
-    },
+    }, 
     subsubsubcontainer2:{
         borderWidth: 1,
-        borderRadius: 2,
-        borderBottomWidth: 0,
+        borderRadius: 2, 
+        borderBottomWidth: 0, 
         borderColor: '#ddd',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        elevation: 1,
-        padding: 5
+        shadowColor: '#000', 
+        shadowOffset: { width: 0, height: 2 }, 
+        shadowOpacity: 0.8, 
+        elevation: 1, 
+        padding: 5 
     },
     greyWall:{
-        width: 5,
+        width: 5, 
         backgroundColor: "grey",
-        marginLeft: 10,
+        marginLeft: 10, 
         marginRight: 10
     }
 });
