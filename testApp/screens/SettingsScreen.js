@@ -18,7 +18,7 @@ export default class SettingsScreen extends React.Component {
                 placeholder="Search" placeholderTextColor="#fff" style={{marginLeft: 5, width: "70%"}}
               />
             </View>
-            <Icon.Ionicons name={"md-menu"} size={40} color="#fff" style={{marginLeft: 20, marginTop: 10}}/> 
+            <Icon.Ionicons name={"md-menu"} size={40} color="#fff" style={{marginLeft: 20, marginTop: 10}}/>
           </View>
           <View style={styles.container1}>
               <View style={styles.subcontainer1}>
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     flexDirection: "column",
-    marginTop: 32
+
   },
   container1: {
     flexDirection: "row",
@@ -118,10 +118,10 @@ const styles = StyleSheet.create({
   },
   container2: {
     flexDirection: "column"
-  }, 
+  },
   circle: {
-    height: 100, 
-    width: 100, 
+    height: 100,
+    width: 100,
     borderRadius: 50
   },
   greyLine:{
@@ -138,14 +138,15 @@ const styles = StyleSheet.create({
   },
   menuBar:{
     backgroundColor: '#FEC107',
-    padding: 15,
+    padding: 5,
+    paddingTop: 30,
     flexDirection: "row"
-  }, 
+  },
   searchbar: {
     flexDirection: "row",
     alignSelf: "center",
-    borderBottomWidth: 1, 
-    borderBottomColor: "#fff", 
+    borderBottomWidth: 1,
+    borderBottomColor: "#fff",
     marginLeft: 5
   }
 });
