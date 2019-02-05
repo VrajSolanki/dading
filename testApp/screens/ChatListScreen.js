@@ -11,8 +11,12 @@ import {   Image,
   View,
   FlatList, Button} from 'react-native';
 import ChatList from '../components/ChatList'
-export default class ConnectionScreen extends React.Component {
+import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator} from 'react-navigation';
 
+export default class ConnectionScreen extends React.Component {
+  openChatBox = () => {
+    this.props.navigation.navigate('ChatsBox');
+  }
   render() {
     return (
 
@@ -43,15 +47,20 @@ export default class ConnectionScreen extends React.Component {
           <ScrollView contentContainerStyle={styles.scrollContent}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}>
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
 
             </ScrollView>
       </View>

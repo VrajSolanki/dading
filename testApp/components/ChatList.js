@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, Button, TouchableOpacity } from 'react-native';
 import { Icon } from 'expo';
 
-export default class ChatList extends React.Component {
-  render() {
+const ChatList  = (props) => {
 
-    return (
-       // Try setting `flexDirection` to `column`.
+      return (
+        <TouchableOpacity onPress = {props.openChatBox}>
        <View style={styles.container}>
          <View>
            <Image source={require('../assets/images/pk.jpg')}
@@ -30,10 +29,11 @@ export default class ChatList extends React.Component {
             <View style = {styles.border}></View>
           </View>
          </View>
+        </TouchableOpacity>
      );
 
   }
-}
+
 
 const styles = StyleSheet.create({
   messageText: {
@@ -44,21 +44,23 @@ const styles = StyleSheet.create({
   infoTime:{
     fontSize: 10,
     color: 'grey',
-    top: 18
+    top: 16
   },
   infoName:{
     marginLeft: 15,
-    top: 15,
+    top: 14,
     fontSize: 15
   },
   message:{
     flex: 1,
-    paddingBottom: 6
+    paddingBottom: 6,
+    marginBottom: 15
   },
   info: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: 5
   },
   text: {
     flex: 1,
@@ -67,7 +69,6 @@ const styles = StyleSheet.create({
   border:{
     borderBottomWidth: 1,
     borderBottomColor: '#e0ebeb',
-    top: 8,
     width: '100%'
   },
   container: {
@@ -80,7 +81,6 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     top: 7,
-
-
-  }
+}
 });
+export default ChatList
