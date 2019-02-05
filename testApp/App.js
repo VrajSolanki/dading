@@ -23,7 +23,7 @@ import { createBottomTabNavigator, createAppContainer, createStackNavigator, cre
 
 const HomeStack  = createStackNavigator({
   Home:HomeScreen,
-    Chats1: ProfileScreen
+  ChatsBox: ProfileScreen,
 });
 HomeStack.navigationOptions = {
   tabBarLabel: ' ',

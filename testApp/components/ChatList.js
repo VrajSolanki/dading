@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, Button, TouchableOpacity } from 'react-native';
 import { Icon } from 'expo';
 
-export default class ChatList extends React.Component {
-  render() {
+const ChatList  = (props) => {
 
-    return (
-       // Try setting `flexDirection` to `column`.
+      return (
+        <TouchableOpacity onPress = {props.openChatBox}>
        <View style={styles.container}>
          <View>
            <Image source={require('../assets/images/pk.jpg')}
@@ -30,10 +29,11 @@ export default class ChatList extends React.Component {
             <View style = {styles.border}></View>
           </View>
          </View>
+        </TouchableOpacity>
      );
 
   }
-}
+
 
 const styles = StyleSheet.create({
   messageText: {
@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70,
     top: 7,
-
-
-  }
+}
 });
+export default ChatList

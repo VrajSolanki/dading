@@ -14,7 +14,9 @@ import ChatList from '../components/ChatList'
 import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator} from 'react-navigation';
 
 export default class ConnectionScreen extends React.Component {
-
+  openChatBox = () => {
+    this.props.navigation.navigate('ChatsBox');
+  }
   render() {
     return (
 
@@ -35,13 +37,6 @@ export default class ConnectionScreen extends React.Component {
                       />
 
       </View>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Chats1')}
-        />
-      </View>
       <View style = {styles.tabBar}>
             <Text style={styles.tabText}>CHATS</Text>
             <Text style={styles.tabText}>DINGS</Text>
@@ -52,15 +47,20 @@ export default class ConnectionScreen extends React.Component {
           <ScrollView contentContainerStyle={styles.scrollContent}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}>
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
-                  <ChatList />
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
+                  <ChatList  openChatBox = {this.openChatBox}/>
 
             </ScrollView>
       </View>
