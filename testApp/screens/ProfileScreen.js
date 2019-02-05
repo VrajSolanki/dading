@@ -1,16 +1,50 @@
 import React from 'react';
 import {Image,Platform,ScrollView,StyleSheet,Text,TextInput,View} from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import Touchable from 'react-native-platform-touchable';
 import ProfilePic from '../profile/profilePic';
 import ComfortLevel from '../profile/comfort_level_icon';
 import EditIcon from '../profile/edit_icon';
 import AddTopicsIcon from '../profile/add_topics_icon';
 import ProgressBar from '../profile/progress_bar';
 import PieChartCustom from '../profile/pie_chart';
+import HeaderButtons, { HeaderButton, Item } from 'react-navigation-header-buttons';
 
+const DisableableHeaderButton = props => (
+  <HeaderButton
+    {...props}
+    background={Touchable.Ripple('white', true)}
+    IconComponent={Ionicons}
+    iconSize={35}
+    color="white"
+  />
+);
 
 export default class ProfileScreen extends React.Component{
+  static navigationOptions = {
+    headerStyle: {
+      backgroundColor: '#FEC107',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    headerRight: (
+      <HeaderButtons HeaderButtonComponent={DisableableHeaderButton}>
+        <Item title="search" iconName="ios-search" onPress={() => alert('search')} disabled />
+        <Item title="select" iconName="ios-navigate" onPress={() => alert('select')} />
+      </HeaderButtons>
+    ),
+      headerLeft: (
+        <HeaderButtons HeaderButtonComponent={DisableableHeaderButton}>
+          <Item title="search" iconName="ios-menu" onPress={() => alert('search')} disabled />
+          <Item title="PROFILE" />
+        </HeaderButtons>
+        ),
+  };
     render(){
         return (
+            <ScrollView>
             <View style={styles.container}>
                 <View style={styles.container1}>
                     <View style={styles.subcontainer1}>
@@ -23,7 +57,7 @@ export default class ProfileScreen extends React.Component{
                         </Text>
                     </View>
                     <View style={styles.subcontainer2}>
-                        <Text style={{marginTop: 90, marginLeft: 10, fontSize: 12, color: "grey"}}>
+                        <Text style={{marginTop: 50, marginLeft: 10, fontSize: 12, color: "grey"}}>
                             Work
                         </Text>
                         <TextInput style={styles.textinput} value="Supply Chain" editable={false}/>
@@ -112,6 +146,7 @@ export default class ProfileScreen extends React.Component{
                     </View>
                 </View>
             </View>
+          </ScrollView>
         );
     }
 }
@@ -120,15 +155,15 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         flexDirection: "column",
-        backgroundColor: "#c0c0c0"
+        backgroundColor: "#c0c0c0",
     },
     container1:{
         borderWidth: 1,
         backgroundColor: "white",
-        height: 300,
-        borderColor: "#c0c0c0", 
+        height:250,
+        borderColor: "#c0c0c0",
         flex: 1,
-        flexDirection: "row"
+        flexDirection: "row",
     },
     container2:{
         borderWidth: 1,
@@ -142,7 +177,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: "white",
         marginTop: 2,
-        height: 200,
+        height: 150,
         borderColor: "#c0c0c0",
         padding: 10
     },
@@ -156,21 +191,21 @@ const styles = StyleSheet.create({
         flexDirection: "column"
     },
     subcontainer3:{
-        height: 100, 
+        height: 100,
         flexDirection: "row"
     },
     subcontainer4: {
         flexDirection: "row"
     },
     subcontainer5: {
-        justifyContent: "center", 
-        alignItems: "center", 
-        flexDirection: "column", 
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
         marginTop: 20
     },
     profilePic: {
         marginTop: 100
-    }, 
+    },
     text1:{
         marginTop: 10,
         marginLeft: 10,
@@ -185,7 +220,7 @@ const styles = StyleSheet.create({
     },
     subsubcontainer:{
         marginLeft:5,
-        marginTop: 80,
+        marginTop: 50,
         flex: 1,
         flexDirection: "row"
     },
@@ -196,9 +231,9 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     subsubcontainer2:{
-        flexDirection: "row", 
-        height: 50, 
-        marginTop: 30 
+        flexDirection: "row",
+        height: 50,
+        marginTop: 30
     },
     subsubcontainer3:{
         marginTop: 50,
@@ -226,24 +261,24 @@ const styles = StyleSheet.create({
     },
     subsubsubcontainer1: {
         justifyContent: "center",
-        alignItems: "center", 
+        alignItems: "center",
         flexDirection: "column"
-    }, 
+    },
     subsubsubcontainer2:{
         borderWidth: 1,
-        borderRadius: 2, 
-        borderBottomWidth: 0, 
+        borderRadius: 2,
+        borderBottomWidth: 0,
         borderColor: '#ddd',
-        shadowColor: '#000', 
-        shadowOffset: { width: 0, height: 2 }, 
-        shadowOpacity: 0.8, 
-        elevation: 1, 
-        padding: 5 
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        elevation: 1,
+        padding: 5
     },
     greyWall:{
-        width: 5, 
+        width: 5,
         backgroundColor: "grey",
-        marginLeft: 10, 
+        marginLeft: 10,
         marginRight: 10
     }
 });

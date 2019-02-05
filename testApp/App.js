@@ -1,11 +1,13 @@
 import React from 'react';
 import { Text, View,  Platform } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
-import LinksScreen from './screens/LinksScreen';
+import ConnectionScreen from './screens/ConnectionScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import TabBarIcon from './components/TabBarIcon';
-import Ding_Icon from './components/Ding_Icon'
+import Ding_Icon from './components/Ding_Icon';
+import ChatListScreen from './screens/ChatListScreen';
+
 import { createBottomTabNavigator, createAppContainer, createStackNavigator, createDrawerNavigator} from 'react-navigation';
 
 // const stack1 = createStackNavigator({
@@ -35,7 +37,7 @@ HomeStack.navigationOptions = {
 };
 
 const SettingsStack  = createStackNavigator({
-  Settings:SettingsScreen
+  Settings:ProfileScreen
 });
 SettingsStack.navigationOptions = {
   tabBarLabel: ' ',
@@ -49,7 +51,7 @@ SettingsStack.navigationOptions = {
 };
 
 const LinksStack  = createStackNavigator({
-  Links:LinksScreen
+  Links:HomeScreen
 });
 LinksStack.navigationOptions = {
   tabBarLabel: ' ',
@@ -59,7 +61,7 @@ LinksStack.navigationOptions = {
 };
 
 const NavStack  = createStackNavigator({
-  Profile:ProfileScreen
+  Profile:ConnectionScreen
 });
 NavStack.navigationOptions = {
   tabBarLabel: ' ',
@@ -73,7 +75,7 @@ NavStack.navigationOptions = {
 };
 
 const NotificationStack  = createStackNavigator({
-  Settings:SettingsScreen
+  Settings:HomeScreen
 });
 NotificationStack.navigationOptions = {
   tabBarLabel: ' ',
@@ -102,7 +104,7 @@ const TabNavigation = createBottomTabNavigator({
     fontSize: 2,
   },
   style: {
-    backgroundColor: '#FEC107',
+    backgroundColor: 'rgb(255,193,7)',
     color:'red'
   },
 }
@@ -110,10 +112,13 @@ const TabNavigation = createBottomTabNavigator({
 
 const TabsWithDrawerNavigation = createDrawerNavigator({
   Profile: {
-    screen: TabNavigation,
+    screen: TabNavigation
   },
   Account:{
     screen:HomeScreen
+  },
+  Chat:{
+    screen:ChatListScreen
   }
 });
 

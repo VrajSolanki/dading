@@ -17,7 +17,7 @@ export default class Dings extends React.Component {
               <Icon.Ionicons
                 name={'md-book'}
                 color = "#DF8869"
-                size={25}
+                size={20}
                 />
          </View>
             <Text style = {styles.textAlt}>Football</Text>
@@ -28,7 +28,7 @@ export default class Dings extends React.Component {
                <Icon.Ionicons
                  name={'md-clipboard'}
                  color = "#DF8869"
-                 size={25}
+                 size={20}
                  />
           </View>
             <Text style = {styles.textAlt}>Novice</Text>
@@ -54,15 +54,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    margin:3,
-    padding:25,
-    paddingBottom:85
+    padding:15,
+    paddingBottom:70
   },
   outerCircle: {
     alignItems: 'center',
-    borderRadius: 50,
-    width: 100,
-    height: 100,
+    borderRadius: 40,
+    width: 80,
+    height: 80,
   },
   circle: {
     borderRadius: 15,
@@ -78,32 +77,34 @@ const styles = StyleSheet.create({
 
   },
   image: {
-    borderRadius: 50,
-    width: 100,
-    height: 100,
+    borderRadius: 40,
+    width: 80,
+    height: 80,
 
   },
   interest: {
+    position: 'absolute',
+    top: 85,
+    left: 15,
+    padding: 5,
+    borderRadius: 5,
+    color: 'grey'
+  },
+   topic: {
     position: 'absolute',
     top: 105,
     left: 15,
     padding: 5,
     borderRadius: 5,
-  },
-   topic: {
-    position: 'absolute',
-    top: 125,
-    left: 15,
-    padding: 5,
-    borderRadius: 5,
+    color: 'grey'
   },
   text: {
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: 'bold'
   },
   textAlt: {
-    fontSize: 13,
-    top: 2
+    fontSize: 11,
+    color: 'grey'
   },
   name: {
     top:5,
@@ -115,11 +116,11 @@ const styles = StyleSheet.create({
     left:-4
   },
   interestIcon: {
-    top:22,
+    top:18,
     left: -25
   },
   topicIcon: {
-    top: 27,
+    top: 18,
     left: -25
   }
 });
