@@ -17,7 +17,7 @@ export default class ConnectionScreen extends React.Component {
     return (
 
     <View style = {styles.container}>
-      <View style ={styles.menuBar}>
+    <View style ={styles.menuBar}>
       <View style = {styles.menuIcons}>
         <Icon.FontAwesome
                name={'search'}
@@ -95,6 +95,4 @@ menuIcons:{
     backgroundColor: "white",
     padding: 2
   },
-
-
 });
