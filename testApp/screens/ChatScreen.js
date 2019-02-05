@@ -129,6 +129,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#FEC107',
         padding: 2,
         flexDirection: "row",
-        marginTop: 32
+        paddingTop: 20
     }
 });
