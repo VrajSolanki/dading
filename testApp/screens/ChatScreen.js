@@ -6,12 +6,26 @@ export default class ChatScreen extends React.Component{
     render(){
         return(
             <View>
-                <View style={styles.container}>
+                <View style ={styles.menuBar}>
+                    <Icon.Ionicons
+                        name={'md-football'}
+                        color = "white"
+                        size={50}
+                        style={{padding: 10}}
+                    />
+                    <View style={{flexDirection: "column", justifyContent: "center"}}>
+                        <Text style={{fontSize: 20,color: "#fff"}}>Football</Text>
+                        <Text style={{fontSize: 10,color: "#fff"}}>45 members</Text>
+                    </View>
+                    <Icon.Ionicons name={"md-call"} size={35} color="#fff" style={{ padding: 10, marginLeft: "50%", marginTop: 7}}/>
+                    <Icon.Ionicons name={"md-more"} size={40} color="#fff" style={{ padding: 10,marginTop: 5 }}/>
+                </View>
+                <ScrollView style={styles.container}>
                     <View style={styles.timeline}>
                         <Text style={{color: "#CCC"}}>24 January 2019</Text>
                     </View>
                     <View style={styles.SecondPersonChat}>
-                        <Image source={require("../images/guy.jpg")} style={styles.circle}/>
+                        <Image source={require("../assets/images/pk.jpg")} style={styles.circle}/>
                         <View style={styles.chatbox}>
                             <Text style={{color:"#b56c19", fontWeight: "bold"}}>Karan</Text>
                             <Text>Hey Buddy, your post was great. Looking forward to more of that!</Text>
@@ -34,14 +48,14 @@ export default class ChatScreen extends React.Component{
                         </View>
                     </View>
                     <View style={styles.SecondPersonChat}>
-                        <Image source={require("../images/guy.jpg")} style={styles.circle}/>
+                        <Image source={require("../assets/images/pk.jpg")} style={styles.circle}/>
                         <View style={styles.chatbox}>
                             <Text style={{color:"#000088", fontWeight: "bold"}}>Steve</Text>
                             <Text>Hey, it was just brilliant, did not expect that but you must have seen it coming. Hehe</Text>
                             <Text style={{alignSelf: "flex-end", fontSize: 10, color: "grey"}}>12:01 am</Text>
                         </View>
                     </View>
-                </View>
+                </ScrollView>
                 <View style={styles.textBoxHolder}>
                     <View style={styles.Textbox}>
                         <Icon.Ionicons name={"md-happy"} size={30} color='grey' style={{marginLeft: 5, marginTop: 3.5}}/>
@@ -64,8 +78,8 @@ export default class ChatScreen extends React.Component{
 const styles = StyleSheet.create({
     container:{
         flexDirection: "column",
-        marginTop: 100,
-        height :"88%"
+        marginTop: 5,
+        height :"86%"
     },
     timeline: {
         flexDirection: "column",
@@ -110,5 +124,11 @@ const styles = StyleSheet.create({
         borderColor: "#ffa000",
         borderWidth: 2, 
         marginLeft: 10
+    },
+    menuBar:{
+        backgroundColor: '#FEC107',
+        padding: 2,
+        flexDirection: "row",
+        marginTop: 32
     }
 });

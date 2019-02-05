@@ -76,7 +76,7 @@ NavStack.navigationOptions = {
 };
 
 const NotificationStack  = createStackNavigator({
-  Settings:HomeScreen,
+  Settings:SettingsScreen
 });
 NotificationStack.navigationOptions = {
   tabBarLabel: ' ',
