@@ -1,205 +1,124 @@
 import React from 'react';
-import { Ionicons } from '@expo/vector-icons';
-import Touchable from 'react-native-platform-touchable';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import {   Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  FlatList, Button} from 'react-native';
-import { movies } from '../src/data';
-import Poster from '../src/Poster';
-import HeaderButtons, { HeaderButton, Item } from 'react-navigation-header-buttons';
-import Dings from '../components/Dings'
+import {Image,Platform,ScrollView,StyleSheet,Text,TextInput,View} from 'react-native';
+import {Icon} from 'expo';
 
-const DisableableHeaderButton = props => (
-  <HeaderButton
-    {...props}
-    background={Touchable.Ripple('white', true)}
-    IconComponent={Ionicons}
-    iconSize={30}
-    color="white"
-  />
-);
-
-export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    headerStyle: {
-      backgroundColor: '#00796A',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-    headerRight: (
-      <HeaderButtons HeaderButtonComponent={DisableableHeaderButton}>
-        <Item title="search" iconName="ios-search" onPress={() => alert('search')} disabled />
-        <Item title="select" iconName="ios-navigate" onPress={() => alert('select')} />
-      </HeaderButtons>
-    ),
-      headerLeft: (
-        <HeaderButtons HeaderButtonComponent={DisableableHeaderButton}>
-          <Item title="search" iconName="ios-menu" onPress={() => alert('search')} disabled />
-          <Item title="select" iconName="ios-person" onPress={() => alert('select')} />
-        </HeaderButtons>
-        ),
-  };
-
+export default class SettingsScreen extends React.Component {
   render() {
-    return (
-      <View>
-      <ScrollView>
-            <View style={styles.container}>
-              <View style = {styles.box}>
-                <Text style = {styles.header}>
-                    Dings
-                </Text>
-                <ScrollView style = {styles.dingScroll}>
-                        <View style = {styles.ding}>
-                            <Dings />
-                        </View>
-                        <View style = {styles.ding}>
-                            <Dings />
-                        </View>
-                        <View style = {styles.ding}>
-                            <Dings />
-                        </View>
-                        <View style = {styles.ding}>
-                            <Dings />
-                        </View>
-                        <View style = {styles.ding}>
-                            <Dings />
-                        </View>
-                        <View style = {styles.ding}>
-                            <Dings />
-                        </View>
-                        <View style = {styles.ding}>
-                            <Dings />
-                        </View>
-
-                </ScrollView>
+      return(
+        <View style={styles.container}>
+                <View style={styles.container1}>
+                    <View style={styles.subcontainer1}>
+                      <Image source={require("../images/guy.jpg")} style={styles.circle}/>
+                    </View>
+                    <View style={styles.subcontainer1}>
+                        <Text style={{marginTop: 10, fontSize: 25}}>
+                            Harsh Bali
+                        </Text>
+                        <Text style={{marginTop: 10, color: "grey"}}>
+                            View your profile
+                        </Text>
+                    </View>
                 </View>
 
-                <View  style = {styles.box}>
-                  <Text style = {styles.header}>
-                      My Topics
-                  </Text>
-                  <ScrollView contentContainerStyle={styles.scrollContent}
-                // Hide all scroll indicators
-                    showsHorizontalScrollIndicator={true}
-                    showsVerticalScrollIndicator={false}
-                    horizontal={true}>
-                  {movies.map((movie, index) => <Poster
-                  movie={movie}
-                  key={index}
-                  />)}
-                  </ScrollView>
-                  </View>
+                <View style={styles.greyLine}></View>
 
-                  <View  style = {styles.box}>
-                    <Text style = {styles.header}>
-                        Recommendaations
-                    </Text>
-                    <ScrollView contentContainerStyle={styles.scrollContent}
-                  // Hide all scroll indicators
-                      showsHorizontalScrollIndicator={true}
-                      showsVerticalScrollIndicator={false}
-                      horizontal={true}>
-                    {movies.map((movie, index) => <Poster
-                    movie={movie}
-                    key={index}
-                    />)}
-                    </ScrollView>
+                <View style={styles.container2}>
+                    <View style={styles.subcontainer2}>
+                      <Icon.Ionicons
+                          name = {'md-contact'}
+                          size = {50}
+                          color = 'red'
+                      />
+                      <Text style={{fontSize: 20, marginTop: 10, marginLeft: 20, color: "#666"}}>Account</Text>
                     </View>
-
-                    <View  style = {styles.box}>
-                      <Text style = {styles.header}>
-                          My Topics
-                      </Text>
-                      <ScrollView contentContainerStyle={styles.scrollContent}
-                    // Hide all scroll indicators
-                        showsHorizontalScrollIndicator={false}
-                        showsVerticalScrollIndicator={false}
-                        horizontal={true}>
-                      {movies.map((movie, index) => <Poster
-                      movie={movie}
-                      key={index}
-                      />)}
-                      </ScrollView>
-                      </View>
-
-                    <View  style = {styles.box}>
-                      <Text style = {styles.header}>
-                        Tren- Ding- ers!
-                      </Text>
-                      <ScrollView contentContainerStyle={styles.scrollContent}
-                    // Hide all scroll indicators
-                        showsHorizontalScrollIndicator={false}
-                        showsVerticalScrollIndicator={false}
-                        horizontal={true}>
-                      {movies.map((movie, index) => <Poster
-                      movie={movie}
-                      key={index}
-                      />)}
-                      </ScrollView>
-                      </View>
-
-
+                    <View style={styles.subcontainer2}>
+                      <Icon.Ionicons
+                          name = {'md-create'}
+                          size = {50}
+                          color = 'red'
+                      />
+                      <Text style={{fontSize: 20, marginTop: 10, marginLeft: 20, color: "#666"}}>Edit Profile</Text>
+                    </View>
+                    <View style={styles.subcontainer2}>
+                      <Icon.Ionicons
+                          name = {'md-lock'}
+                          size = {50}
+                          color = 'red'
+                      />
+                      <Text style={{fontSize: 20, marginTop: 10, marginLeft: 25, color: "#666"}}>Privacy</Text>
+                    </View>
+                    <View style={styles.subcontainer2}>
+                      <Icon.Ionicons
+                          name = {'md-notifications-outline'}
+                          size = {50}
+                          color = 'red'
+                      />
+                      <Text style={{fontSize: 20, marginTop: 10, marginLeft: 21, color: "#666"}}>Notifications</Text>
+                    </View>
+                    <View style={styles.subcontainer2}>
+                      <Icon.Ionicons
+                          name = {'md-information-circle-outline'}
+                          size = {50}
+                          color = 'red'
+                      />
+                      <Text style={{fontSize: 20, marginTop: 10, marginLeft: 18, color: "#666"}}>About</Text>
+                    </View>
+                    <View style={styles.subcontainer2}>
+                      <Icon.Ionicons
+                          name = {'md-contacts'}
+                          size = {50}
+                          color = 'red'
+                      />
+                      <Text style={{fontSize: 20, marginTop: 10, marginLeft: 16, color: "#666"}}>Refer a friend</Text>
+                    </View>
+                    <View style={styles.subcontainer2}>
+                      <Icon.Ionicons
+                          name = {'md-power'}
+                          size = {50}
+                          color = 'red'
+                      />
+                      <Text style={{fontSize: 20, marginTop: 10, marginLeft: 20, color: "#666"}}>Log Off</Text>
+                    </View>
+                </View>
             </View>
-      </ScrollView>
-      </View>
-    );
+      )
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1,
-    backgroundColor: '#EEEEEE',
-
+    flexDirection: "column",
+    marginTop: 100
   },
-  header: {
-    fontSize:30,
-    fontWeight: 'bold',
-    textAlign: 'center'
+  container1: {
+    flexDirection: "row",
+    marginLeft: 10,
+    marginBottom: 20
   },
-  scrollContent: {
-    flexDirection: 'row',   // arrange posters in rows
+  subcontainer1:{
+    justifyContent: "center",
+    flexDirection: "column",
+    marginLeft: 10
   },
-  staticContent: {
-    flexDirection: 'row',   // arrange posters in rows
-    flexWrap: 'wrap'      //// allow multiple rows
+  container2: {
+    flexDirection: "column"
+  }, 
+  circle: {
+    height: 100, 
+    width: 100, 
+    borderRadius: 50
   },
-  box: {
-    backgroundColor: "white",
-    marginBottom: 30,
+  greyLine:{
+    width: 350,
+    height: 1,
+    backgroundColor: "#ccc",
+    marginLeft: 40
   },
-  nav:{
-    flexDirection: 'row',
-    marginTop:23,
-    backgroundColor:'#00796A',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding:5
+  subcontainer2: {
+    flexDirection: "row",
+    marginLeft: 40,
+    marginTop: 15,
+    marginBottom: 15
   },
-  nav1:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  box1:{
-    paddingBottom:80
-  },
-  ding: {
-    margin: 10
-  },
-  dingScroll:{
-    flexDirection: 'row',   // arrange posters in rows
-    flexWrap: 'wrap' ,
-  }
-
-
 });
