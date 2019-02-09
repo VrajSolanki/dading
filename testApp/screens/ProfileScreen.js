@@ -1,5 +1,6 @@
 import React from 'react';
 import {Image,Platform,ScrollView,StyleSheet,Text,TextInput,View} from 'react-native';
+import {Icon} from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import Touchable from 'react-native-platform-touchable';
 import ProfilePic from '../profile/profilePic';
@@ -169,7 +170,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: "white",
         height: 300,
-        borderColor: "#c0c0c0", 
+        borderColor: "#c0c0c0",
         flex: 1,
         flexDirection: "row"
     },
@@ -199,21 +200,21 @@ const styles = StyleSheet.create({
         flexDirection: "column"
     },
     subcontainer3:{
-        height: 100, 
+        height: 100,
         flexDirection: "row"
     },
     subcontainer4: {
         flexDirection: "row"
     },
     subcontainer5: {
-        justifyContent: "center", 
-        alignItems: "center", 
-        flexDirection: "column", 
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
         marginTop: 20
     },
     profilePic: {
         marginTop: 100
-    }, 
+    },
     text1:{
         marginTop: 10,
         marginLeft: 10,
@@ -239,9 +240,9 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     subsubcontainer2:{
-        flexDirection: "row", 
-        height: 50, 
-        marginTop: 30 
+        flexDirection: "row",
+        height: 50,
+        marginTop: 30
     },
     subsubcontainer3:{
         marginTop: 50,
@@ -269,24 +270,24 @@ const styles = StyleSheet.create({
     },
     subsubsubcontainer1: {
         justifyContent: "center",
-        alignItems: "center", 
+        alignItems: "center",
         flexDirection: "column"
-    }, 
+    },
     subsubsubcontainer2:{
         borderWidth: 1,
-        borderRadius: 2, 
-        borderBottomWidth: 0, 
+        borderRadius: 2,
+        borderBottomWidth: 0,
         borderColor: '#ddd',
-        shadowColor: '#000', 
-        shadowOffset: { width: 0, height: 2 }, 
-        shadowOpacity: 0.8, 
-        elevation: 1, 
-        padding: 5 
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        elevation: 1,
+        padding: 5
     },
     greyWall:{
-        width: 5, 
+        width: 5,
         backgroundColor: "grey",
-        marginLeft: 10, 
+        marginLeft: 10,
         marginRight: 10
     }
 });
