@@ -20,23 +20,26 @@ export default class SettingsScreen extends React.Component {
             </View>
             <Icon.Ionicons name={"md-menu"} size={40} color="#fff" style={{marginLeft: 20, marginTop: 10}}/>
           </View>
-          <View style={styles.container1}>
-              <View style={styles.subcontainer1}>
-                <Image source={require("../assets/images/pk.jpg")} style={styles.circle}/>
-              </View>
-              <View style={styles.subcontainer1}>
-                  <Text style={{marginTop: 10, fontSize: 25}}>
-                      Harsh Bali
-                  </Text>
-                  <Text style={{marginTop: 10, color: "grey"}}>
-                      View your profile
-                  </Text>
-              </View>
-          </View>
+          <ScrollView>
+          <View>
+            <View style={styles.container1}>
+                <View style={styles.subcontainer1}>
+                  <Image source={require("../assets/images/pk.jpg")} style={styles.circle}/>
+                </View>
+                <View style={styles.subcontainer1}>
+                    <Text style={{marginTop: 10, fontSize: 25}}>
+                        Harsh Bali
+                    </Text>
+                    <Text style={{marginTop: 10, color: "grey"}}>
+                        View your profile
+                    </Text>
+                </View>
+            </View>
 
-          <View style={styles.greyLine}></View>
+            <View style={styles.greyLine}>
+            </View>
 
-                <View style={styles.container2}>
+            <View style={styles.container2}>
                     <View style={styles.subcontainer2}>
                       <Icon.Ionicons
                           name = {'md-contact'}
@@ -93,8 +96,10 @@ export default class SettingsScreen extends React.Component {
                       />
                       <Text style={{fontSize: 20, marginTop: 10, marginLeft: 20, color: "#666"}}>Log Off</Text>
                     </View>
-                </View>
             </View>
+          </View>
+          </ScrollView>
+        </View>
       )
   }
 }
