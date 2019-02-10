@@ -11,6 +11,10 @@ import ProgressBar from '../profile/progress_bar';
 import PieChartCustom from '../profile/pie_chart';
 import HeaderButtons, { HeaderButton, Item } from 'react-navigation-header-buttons';
 
+var shd1 = require('../assets/icons/asset2.png');
+var shd2 = require('../assets/icons/h1.png');
+var shd3 = require('../assets/icons/h3.png');
+
 const DisableableHeaderButton = props => (
   <HeaderButton
     {...props}
@@ -109,8 +113,10 @@ export default class ProfileScreen extends React.Component{
                 <View style={styles.container3}>
                     <View style={{flexDirection: "row"}}>
                         <Text style={styles.font17}>Football</Text>
-                        <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 2}}/>
-                        <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 2}}/>
+                        <Image source={shd1} style={{marginLeft: 5, marginTop: 2, height: 15, width: 13}}/>
+                        {/* <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 2}}/> */}
+                        <Image source={shd2} style={{marginLeft: 5, marginTop: 2, height: 15, width: 13}}/>
+                        {/* <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 2}}/> */}
                     </View>
                     <View style={styles.subcontainer3}>
                         {/* <View style={styles.subsubcontainer2}>
@@ -146,9 +152,11 @@ export default class ProfileScreen extends React.Component{
                         <View>
                             <View style={styles.subsubcontainer3}>
                                 <View style={{flexDirection: "row", marginLeft: 15}}>
-                                    <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 10}}/>
+                                    <Image source={shd2} style={{marginLeft: 5, marginTop: 10, height: 15, width: 13}}/>
+                                    {/* <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 5, marginTop: 10}}/> */}
                                     <ProgressBar/>
-                                    <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 20, marginTop: 10}}/>
+                                    <Image source={shd3} style={{marginLeft: 20, marginTop: 10, height: 15, width: 13}}/>
+                                    {/* <Icon.FontAwesome name={"shield"} size={20} color="red" style={{marginLeft: 20, marginTop: 10}}/> */}
                                 </View>
                             </View>
                         </View>
