@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet} from 'react-native';
+import { Text, View, StyleSheet, Image} from 'react-native';
 import { Icon } from 'expo';
-export default class Topics extends React.Component {
-  render() {
+
+  const Topics = (props) => {
+    var i = props.topicType;
+    if(i == "football") {
+      icon = require('../assets/icons/t1.png');
+    }
+    else
+    if(i == "cricket"){
+        icon = require('../assets/icons/t-2.png');
+    }
+    else if(i == "painting"){
+        icon = require('../assets/icons/t-3.png');
+    }
+    else if (i == "game") {
+        icon = require('../assets/icons/t-4.png');
+    }
+    else{
+        icon = require('../assets/icons/t1.png');
+    }
     return (
       <View style={styles.container}>
             <View style= {styles.outerBox}>
@@ -11,11 +28,8 @@ export default class Topics extends React.Component {
                           Cricket
                       </Text>
                       <View style = {styles.icon}>
-                          <Icon.Ionicons
-                              name={'md-football'}
-                              color = "black"
-                              size={60}
-                            />
+                      <Image source={icon}
+                          style={styles.image} />
                       </View>
                   </View>
             </View>
@@ -34,11 +48,15 @@ export default class Topics extends React.Component {
       </View>
     );
   }
-}
 
 const styles = StyleSheet.create({
   container: {
     padding: 2,
+  },
+  image: {
+    width: 53,
+    height: 53,
+    marginTop:-2
   },
   topic: {
     justifyContent: 'center',
@@ -79,7 +97,8 @@ const styles = StyleSheet.create({
   icon: {
     alignItems: 'center',
     justifyContent: 'center',
-    top: -2
+    top: -2,
+    padding: 8
   },
   text: {
     fontSize: 15,
@@ -91,3 +110,5 @@ const styles = StyleSheet.create({
   },
 
 });
+
+export default Topics

@@ -2,8 +2,27 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 import { Icon } from 'expo';
 
-export default class Dings extends React.Component {
-  render() {
+  const Dings = (props) => {
+    var topic = props.topic;
+    var interest = props.interest;
+    console.log(topic);
+    console.log(interest);
+    var iconInterest, iconTopic;
+    if(interest == "football"){
+        iconInterest = require('../assets/icons/h5.png');
+    }
+    if(topic == "t1"){
+      iconTopic = require('../assets/icons/h2.png');
+    }
+    else if(topic == "t2"){
+      iconTopic = require('../assets/icons/h4.png');
+    }
+    else if(topic == "t3"){
+      iconTopic = require('../assets/icons/h3.png');
+    }
+    else if(topic == "t4"){
+      iconTopic = require('../assets/icons/h1.png');
+    }
     return (
       <View style={styles.container}>
         <View style={styles.outerCircle}>
@@ -12,26 +31,18 @@ export default class Dings extends React.Component {
         <View style = {styles.name}>
           <Text style = {styles.text}>Preetam</Text>
         </View>
-        <View style = {styles.interest}>
-        <View style = {styles.interestIcon}>
-              <Icon.Ionicons
-                name={'md-book'}
-                color = "#DF8869"
-                size={20}
-                />
-         </View>
-            <Text style = {styles.textAlt}>Football</Text>
-        </View>
+        <View style = {styles.info}>
+            <Text>
+            <Image source={iconInterest}
+                style={styles.iconInterest} />
+                <Text style = {styles.textAlt}>Football</Text>
+            </Text>
+            <Text>
+            <Image source={iconTopic}
+                style={styles.iconTopic} />
+                <Text style = {styles.textAlt}>Novice</Text>
+            </Text>
 
-         <View style = {styles.topic}>
-         <View style = {styles.topicIcon}>
-               <Icon.Ionicons
-                 name={'md-clipboard'}
-                 color = "#DF8869"
-                 size={20}
-                 />
-          </View>
-            <Text style = {styles.textAlt}>Novice</Text>
         </View>
         <View style={styles.star}>
           <Icon.Ionicons
@@ -46,7 +57,6 @@ export default class Dings extends React.Component {
       </View>
     );
   }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -54,8 +64,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    padding:15,
-    paddingBottom:70
+    padding:14,
+    paddingBottom: 80
+  },
+  info:{
+    marginTop: 4,
+    padding: 3
+  },
+  iconTopic:{
+    width: 17,
+    height: 17
+  },
+  iconInterest:{
+    width: 17,
+    height: 17
   },
   outerCircle: {
     alignItems: 'center',
@@ -63,48 +85,19 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
   },
-  circle: {
-    borderRadius: 15,
-    width: 30,
-    height: 30,
-    borderColor: '#00796A',
-    borderWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    top: 60,
-    left: 60
-
-  },
   image: {
     borderRadius: 40,
     width: 80,
     height: 80,
-
-  },
-  interest: {
-    position: 'absolute',
-    top: 85,
-    left: 15,
-    padding: 5,
-    borderRadius: 5,
-    color: 'grey'
-  },
-   topic: {
-    position: 'absolute',
-    top: 105,
-    left: 15,
-    padding: 5,
-    borderRadius: 5,
-    color: 'grey'
-  },
-  text: {
+    },
+text: {
     fontSize: 15,
     fontWeight: 'bold'
   },
   textAlt: {
-    fontSize: 11,
-    color: 'grey'
+    fontSize: 12,
+    color: 'grey',
+
   },
   name: {
     top:5,
@@ -115,12 +108,6 @@ const styles = StyleSheet.create({
     top:-5,
     left:-4
   },
-  interestIcon: {
-    top:18,
-    left: -25
-  },
-  topicIcon: {
-    top: 18,
-    left: -25
-  }
+
 });
+export default Dings
