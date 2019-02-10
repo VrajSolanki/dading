@@ -2,17 +2,15 @@ import React from 'react';
 import {Image,Platform,ScrollView,StyleSheet,Text,TextInput,View} from 'react-native';
 import {Icon} from 'expo';
 
+var mutual = require('../assets/icons/ch.png');
 export default class ChatScreen extends React.Component{
+
     render(){
         return(
             <View>
                 <View style ={styles.menuBar}>
-                    <Icon.Ionicons
-                        name={'md-football'}
-                        color = "white"
-                        size={50}
-                        style={{padding: 10}}
-                    />
+                <Image source={mutual}
+                    style={styles.mutual} />
                     <View style={{flexDirection: "column", justifyContent: "center"}}>
                         <Text style={{fontSize: 20,color: "#fff"}}>Football</Text>
                         <Text style={{fontSize: 10,color: "#fff"}}>45 members</Text>
@@ -81,6 +79,11 @@ const styles = StyleSheet.create({
         marginTop: 5,
         height :"86%"
     },
+    mutual:{
+      width: 60,
+      height: 60,
+      margin: 3
+    },
     timeline: {
         flexDirection: "column",
         justifyContent: "center",
@@ -91,14 +94,14 @@ const styles = StyleSheet.create({
     FirstPersonChat: {
         marginBottom: 10,
         alignItems: "flex-end"
-    }, 
+    },
     SecondPersonChat:{
         marginBottom: 10,
         flexDirection: "row"
     },
     circle: {
-        height: 60, 
-        width: 60, 
+        height: 60,
+        width: 60,
         borderRadius: 30,
         marginLeft: 10
     },
@@ -122,7 +125,7 @@ const styles = StyleSheet.create({
         minHeight: 40,
         borderRadius: 20,
         borderColor: "#ffa000",
-        borderWidth: 2, 
+        borderWidth: 2,
         marginLeft: 10
     },
     menuBar:{

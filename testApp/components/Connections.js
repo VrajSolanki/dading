@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 import { Icon } from 'expo';
 
-export default class Connections extends React.Component {
-  render() {
-
+const Connections = (props) => {
+var dings = require('../assets/icons/cn1.png');
+var mutual = require('../assets/icons/cn2.png');
     return (
        <View style={styles.container}>
           <View style = {styles.leftTab}>
@@ -17,19 +17,13 @@ export default class Connections extends React.Component {
                           Micheal Scott
                       </Text>
                       <Text>
-                          <Icon.FontAwesome
-                               name={'comments'}
-                               color = "#ED6630"
-                               size={16}
-                               />
+                      <Image source={dings}
+                          style={styles.dings} />
                           <Text style = {styles.dingTopic}>12 dings</Text>
                       </Text>
                       <Text>
-                          <Icon.FontAwesome
-                               name={'clipboard'}
-                               color = "#FBBE17"
-                               size={16}
-                               />
+                      <Image source={mutual}
+                          style={styles.mutual} />
                             <Text style = {styles.dingTopic}>15 mutual topics</Text>
                       </Text>
                 </View>
@@ -41,19 +35,13 @@ export default class Connections extends React.Component {
                     </Text>
                     <Text>
                         <Text style = {styles.dingTopic}>12 dings</Text>
-                        <Icon.FontAwesome
-                             name={'comments'}
-                             color = "#ED6630"
-                             size={16}
-                             />
+                        <Image source={dings}
+                            style={styles.dings} />
                     </Text>
                     <Text>
                           <Text style = {styles.dingTopic}>15 mutual topics</Text>
-                          <Icon.FontAwesome
-                               name={'clipboard'}
-                               color = "#FBBE17"
-                               size={16}
-                               />
+                          <Image source={mutual}
+                              style={styles.mutual} />
                     </Text>
               </View>
               <View>
@@ -65,7 +53,7 @@ export default class Connections extends React.Component {
      );
 
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {
@@ -79,6 +67,14 @@ const styles = StyleSheet.create({
     borderBottomColor:'#e0ebeb',
     borderStyle: 'dotted',
 
+  },
+  dings:{
+    width: 17,
+    height: 17
+  },
+  mutual:{
+    width: 17,
+    height: 17
   },
   dingTopic:{
     fontSize: 14,
@@ -127,3 +123,4 @@ const styles = StyleSheet.create({
       alignItems: 'flex-start'
   }
 });
+export default Connections

@@ -57,7 +57,7 @@ export default class HomeScreen extends React.Component {
         <Text style = {styles.header}>
             Dings
         </Text>
-        
+
         <Text style = {styles.tagline}>
            Let's get dinging
         </Text>
@@ -66,23 +66,24 @@ export default class HomeScreen extends React.Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}>
-                  <Dings />
-                  <Dings />
-                  <Dings />
-                  <Dings />
-                  <Dings />
-                  <Dings />
+                  <Dings interest = "football" topic = "t1"/>
+                  <Dings interest = "football" topic = "t2"/>
+                  <Dings interest = "football" topic = "t3"/>
+                  <Dings interest = "football" topic = "t4"/>
+                  <Dings interest = "football" topic = "t1"/>
+                  <Dings interest = "football" topic = "t1"/>
             </ScrollView>
 
             <ScrollView contentContainerStyle={styles.scrollContent}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}>
-                    <Dings />
-                    <Dings />
-                    <Dings />
-                    <Dings />
-                    <Dings />
+            <Dings interest = "football" topic = "t1"/>
+            <Dings interest = "football" topic = "t2"/>
+            <Dings interest = "football" topic = "t3"/>
+            <Dings interest = "football" topic = "t4"/>
+            <Dings interest = "football" topic = "t1"/>
+            <Dings interest = "football" topic = "t1"/>
               </ScrollView>
       </View>
 
@@ -94,11 +95,11 @@ export default class HomeScreen extends React.Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}>
-                  <Topics />
-                  <Topics />
-                  <Topics />
-                  <Topics />
-                  <Topics />
+                  <Topics topicType ="football" />
+                  <Topics topicType ="cricket" />
+                  <Topics topicType ="painting" />
+                  <Topics topicType ="football" />
+                  <Topics topicType ="game" />
             </ScrollView>
       </View>
 
@@ -110,12 +111,11 @@ export default class HomeScreen extends React.Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}>
-                  < Recommendations />
-                  < Recommendations />
-                  < Recommendations />
-                  < Recommendations />
-                  < Recommendations />
-                  < Recommendations />
+          <Topics topicType ="football" />
+          <Topics topicType ="cricket" />
+          <Topics topicType ="painting" />
+          <Topics topicType ="football" />
+          <Topics topicType ="game" />
             </ScrollView>
       </View>
 
@@ -128,22 +128,24 @@ export default class HomeScreen extends React.Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}>
-                  <Dings />
-                  <Dings />
-                  <Dings />
-                  <Dings />
-                  <Dings />
+          <Dings interest = "football" topic = "t1"/>
+          <Dings interest = "football" topic = "t2"/>
+          <Dings interest = "football" topic = "t3"/>
+          <Dings interest = "football" topic = "t4"/>
+          <Dings interest = "football" topic = "t1"/>
+          <Dings interest = "football" topic = "t1"/>
             </ScrollView>
 
             <ScrollView contentContainerStyle={styles.scrollContent}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}>
-                    <Dings />
-                    <Dings />
-                    <Dings />
-                    <Dings />
-                    <Dings />
+            <Dings interest = "football" topic = "t1"/>
+            <Dings interest = "football" topic = "t2"/>
+            <Dings interest = "football" topic = "t3"/>
+            <Dings interest = "football" topic = "t4"/>
+            <Dings interest = "football" topic = "t1"/>
+            <Dings interest = "football" topic = "t1"/>
               </ScrollView>
       </View>
 
