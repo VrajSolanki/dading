@@ -1,0 +1,31 @@
+{
+  "name": "empty-project-template",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo-cli start"
+  },
+  "dependencies": {
+    "@expo/samples": "2.1.1",
+    "@expo/vector-icons": "^10.0.1",
+    "bootstrap": "^4.3.1",
+    "exp": "^57.2.1",
+    "expo": "32.0.2",
+    "expo-cli": "2.11.6",
+    "react": "16.5.0",
+    "react-bootstrap": "^1.0.0-beta.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-action-bar": "^2.0.5",
+    "react-native-elements": "^1.1.0",
+    "react-native-ionicons": "^4.5.5",
+    "react-native-material-bottom-navigation": "^1.0.2",
+    "react-native-svg-charts": "^5.2.0",
+    "react-native-vector-icons": "^6.4.2",
+    "react-navigation": "3.3.2",
+    "react-navigation-header-buttons": "^2.1.2"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "5.0.0",
+    "jest-expo": "^32.0.0"
+  }
+}
