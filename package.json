@@ -1,0 +1,51 @@
+{
+  "name": "empty-project-template",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo-cli start"
+  },
+  "dependencies": {
+    "@expo/samples": "2.1.1",
+    "@expo/vector-icons": "^10.0.1",
+    "bootstrap": "^4.3.1",
+    "exp": "^57.2.1",
+    "expo": "32.0.2",
+    "expo-app-auth": "^4.0.0",
+    "expo-cli": "2.11.6",
+    "native-base": "^2.12.1",
+    "react": "16.5.0",
+    "react-bootstrap": "^1.0.0-beta.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-action-bar": "^2.0.5",
+    "react-native-button": "^2.3.0",
+    "react-native-check-box": "^2.1.7",
+    "react-native-elements": "^1.1.0",
+    "react-native-firebase": "^5.3.1",
+    "react-native-flexi-radio-button": "^0.2.2",
+    "react-native-floating-action": "^1.14.2",
+    "react-native-google-signin": "^2.0.0",
+    "react-native-ionicons": "^4.5.5",
+    "react-native-material-bottom-navigation": "^1.0.2",
+    "react-native-material-dropdown": "^0.11.1",
+    "react-native-modal": "^9.0.0",
+    "react-native-modalbox": "^1.7.1",
+    "react-native-percentage-circle": "^1.0.7",
+    "react-native-progress-bar-animated": "^1.0.6",
+    "react-native-radio-buttons-group": "^1.0.7",
+    "react-native-ratings": "^6.3.1",
+    "react-native-responsive-screen": "^1.2.2",
+    "react-native-slider": "^0.11.0",
+    "react-native-star-rating": "^1.1.0",
+    "react-native-svg-charts": "^5.2.0",
+    "react-native-vector-icons": "^6.4.2",
+    "react-navigation": "3.3.2",
+    "react-navigation-header-buttons": "^2.1.2",
+    "react-redux": "^7.0.2",
+    "socket.io-client": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "5.0.0",
+    "jest-expo": "^32.0.0"
+  }
+}

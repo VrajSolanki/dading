@@ -1,0 +1,22 @@
+
+ 
+
+ {
+   "expo": {
+    "name": "dading",
+   "icon": "./assets/icon.png",
+    "version": "1.0.0",
+    "slug": "dading",
+   "sdkVersion": "32.0.0",
+    "ios": {
+      "bundleIdentifier": "com.gbros.dading"
+    },
+    "android": {
+      "package": "com.gbros.dading",
+      "googleServicesFile": "./google-services.json",
+   
+    }
+   },
+   "apply plugin" : "com.google.gms.google-services"
+
+ }
